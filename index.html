@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Technical Documentation Page</title>
+</head>
+<body>
+    <!-- User Story #1 -->
+    <main id="main-doc">
+        <!-- User Story #2 -->
+        <section class="main-section">
+            <!-- User Story #3 - #4 -->
+            <header id="basics_and_terminology"><h2>Basics and terminology</h2></header>
+            <!-- User Story #5 -->
+            <p>Since flexbox is a whole module and not a single property, it involves a 
+                lot of things including its whole set of properties. Some of them are 
+                meant to be set on the container (parent element, known as “flex 
+                container”) whereas the others are meant to be set on the children (said 
+                “flex items”).</p>
+            <p>If “regular” layout is based on both block and inline flow directions, the 
+                flex layout is based on “flex-flow directions”. Please have a look at this 
+                figure from the specification, explaining the main idea behind the flex 
+                layout.</p>
+            <img src="https://css-tricks.com/wp-content/uploads/2018/11/00-basic-terminology.svg" alt="">
+            <!-- User Story #7 -->
+            <ul>
+                <li><strong>main axis</strong> – The main axis of a flex container is the primary axis along which flex items are laid out. Beware, it is not necessarily horizontal; it depends on the flex-direction property (see below).</li>
+                <li><strong>main-start | main-end</strong> – The flex items are placed within the container starting from main-start and going to main-end.</li>
+                <li><strong>main size</strong> – A flex item’s width or height, whichever is in the main dimension, is the item’s main size. The flex item’s main size property is either the ‘width’ or ‘height’ property, whichever is in the main dimension.</li>
+                <li><strong>cross axis</strong> – The axis perpendicular to the main axis is called the cross axis. Its direction depends on the main axis direction.</li>
+                <li><strong>cross-start | cross-end</strong> – Flex lines are filled with items and placed into the container starting on the cross-start side of the flex container and going toward the cross-end side.</li>
+                <li><strong>cross size</strong> – The width or height of a flex item, whichever is in the cross dimension, is the item’s cross size. The cross size property is whichever of ‘width’ or ‘height’ that is in the cross dimension.</li>
+            </ul>
+        </section>
+
+        <section class="main-section">
+            <header id="flexbox_properties"><h2>Flexbox properties</h2></header>
+            <h3>display</h3>
+            <p>This defines a flex container; inline or block depending on the given value. It enables a flex context for all its direct children.</p>
+            <!-- User Story #6 -->
+            <div class="code-container"><code>.container {<br>
+                display: flex; /* or inline-flex */ <br>
+                }</code></div>
+            <h3>flex-direction</h3>
+            <p>This establishes the main-axis, thus defining the direction flex items are placed in the flex container. Flexbox is (aside from optional wrapping) a single-direction layout concept. Think of flex items as primarily laying out either in horizontal rows or vertical columns.</p>
+            <div class="code-container"><code>.container { <br>
+                flex-direction: row | row-reverse | column | column-reverse; <br>
+                }</code></div>
+
+            <h3>flex-shrink</h3>
+            <p>This defines the ability for a flex item to shrink if necessary.</p>
+            <div class="code-container"><code>.item { <br>
+                flex-shrink: 3; /* default 1 */ <br>
+                }</code></div>
+        </section>
+
+        <section class="main-section">
+            <header id="flexbox_tricks"><h2>Flexbox Tricks</h2></header>
+            <ul>
+                <li>Adaptive Photo Layout with Flexbox</li>
+                <li>Balancing on a Pivot with Flexbox</li>
+                <li>Flexbox and Truncated Text</li>
+                <li>Flexbox and absolute positioning</li>
+                <li>Filling the Space in the Last Row with Flexbox</li>
+            </ul>
+        </section>
+
+
+        <section class="main-section">
+            <header id="examples"><h2>Examples</h2></header>
+            <p>Let’s start with a very very simple example, solving an almost daily problem: perfect centering. It couldn’t be any simpler if you use flexbox.</p>
+            <div class="code-container"><code> .parent { <br>
+                display: flex; <br>
+                height: 300px; /* Or whatever */ <br>
+                } <br>
+                <br>
+                .child { <br>
+                width: 100px;  /* Or whatever */ <br>
+                height: 100px; /* Or whatever */ <br>
+                margin: auto;  /* Magic! */ <br>
+                }</code></div>
+            <p>Now let’s use some more properties. Consider a list of 6 items, all with fixed dimensions, but can be auto-sized. We want them to be evenly distributed on the horizontal axis so that when we resize the browser, everything scales nicely, and without media queries.</p>
+            <div class="code-container"><code> .flex-container { <br>
+                /* We first create a flex layout context */ <br>
+                display: flex; <br>
+                <br>
+                /* Then we define the flow direction <br>
+                    and if we allow the items to wrap <br>
+                 * Remember this is the same as: <br>
+                 * flex-direction: row; <br>
+                 * flex-wrap: wrap; <br>
+                 */ <br>
+                flex-flow: row wrap; <br>
+                <br>
+                /* Then we define how is distributed the remaining space */ <br>
+                justify-content: space-around; <br>
+                }</code></div>
+        </section>
+
+        <section class="main-section">
+            <header id="background"><h2>Background</h2></header>
+            <p>The Flexbox Layout (Flexible Box) module (a W3C Candidate Recommendation as of October 2017) aims at providing a more efficient way to lay out, align and distribute space among items in a container, even when their size is unknown and/or dynamic (thus the word “flex”).</p>
+            <p>The main idea behind the flex layout is to give the container the ability to alter its items’ width/height (and order) to best fill the available space (mostly to accommodate to all kind of display devices and screen sizes). A flex container expands items to fill available free space or shrinks them to prevent overflow.</p>
+            <p>Most importantly, the flexbox layout is direction-agnostic as opposed to the regular layouts (block which is vertically-based and inline which is horizontally-based). While those work well for pages, they lack flexibility (no pun intended) to support large or complex applications (especially when it comes to orientation changing, resizing, stretching, shrinking, etc.).</p>
+        </section>
+
+    </main>
+        <!-- User Story #8 -->
+        <nav id="navbar">
+            <!-- User Story #9 - #11 -->
+            <header class="nav-header"><h1>Flexbox CSS Documentation</h1></header>
+            <!-- User Story #10 - #12 -#13 -->
+            <div class="link-container"><a href="#basics_and_terminology" class="nav-link">Basics and terminology</a></div>
+            <div class="link-container"><a href="#flexbox_properties" class="nav-link">Flexbox properties</a></div>
+            <div class="link-container"><a href="#flexbox_tricks" class="nav-link">Flexbox Tricks</a></div>
+            <div class="link-container"><a href="#examples" class="nav-link">Examples</a></div>
+            <div class="link-container"><a href="#background" class="nav-link">Background</a></div>
+        </nav>
+</body>
+</html>
